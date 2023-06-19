@@ -4,34 +4,51 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Users implements Parcelable {
-    private String userId;
+    private String userName;
+    private String password;
     private String name;
     private String email;
     private String job;
     private String education;
     private String gender;
-    private String age;
     private String address;
+
+    private String age;
+    private String role;
+    private String googleId;
+
 
     public Users() {}
 
-    public Users(String userId, String name, String email, String job, String education, String gender, String age, String address) {
-        this.userId = userId;
+    public Users( String userName, String password, String name, String email, String job, String education, String gender, String address, String age, String role, String googleId) {
+        this.userName = userName;
+        this.password = password;
         this.name = name;
         this.email = email;
         this.job = job;
         this.education = education;
         this.gender = gender;
-        this.age = age;
         this.address = address;
+        this.age = age;
+        this.role = role;
+        this.googleId = googleId;
     }
 
-    public String getUserId() {
-        return userId;
+
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
@@ -74,14 +91,6 @@ public class Users implements Parcelable {
         this.gender = gender;
     }
 
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -90,27 +99,57 @@ public class Users implements Parcelable {
         this.address = address;
     }
 
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getGoogleId() {
+        return googleId;
+    }
+
+    public void setGoogleId(String googleId) {
+        this.googleId = googleId;
+    }
+
     protected Users(Parcel in) {
-        userId = in.readString();
+        userName = in.readString();
+        password = in.readString();
         name = in.readString();
         email = in.readString();
         job = in.readString();
         education = in.readString();
         gender = in.readString();
-        age = in.readString();
         address = in.readString();
+        age = in.readString();
+        role = in.readString();
+        googleId = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(userId);
+        dest.writeString(userName);
+        dest.writeString(password);
         dest.writeString(name);
         dest.writeString(email);
         dest.writeString(job);
         dest.writeString(education);
         dest.writeString(gender);
-        dest.writeString(age);
         dest.writeString(address);
+        dest.writeString(age);
+        dest.writeString(role);
+        dest.writeString(googleId);
     }
 
     @Override
@@ -130,4 +169,5 @@ public class Users implements Parcelable {
         }
     };
 }
+
 

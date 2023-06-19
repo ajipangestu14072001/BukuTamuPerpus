@@ -1,14 +1,18 @@
 package com.example.bukutamuperpustakaan.view;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.bukutamuperpustakaan.MainActivity;
 import com.example.bukutamuperpustakaan.databinding.ActivityLoginBinding;
+import com.example.bukutamuperpustakaan.network.DatabaseConnection;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -24,6 +28,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
@@ -68,23 +75,20 @@ public class LoginActivity extends AppCompatActivity {
                     String email = googleSignInAccount.getEmail();
                     String nama = googleSignInAccount.getDisplayName();
 
-                    DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("users");
-                    usersRef.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            if (dataSnapshot.exists()) {
-                                AuthCredential authCredential = GoogleAuthProvider.getCredential(googleSignInAccount.getIdToken(), null);
-                                firebaseAuth.signInWithCredential(authCredential).addOnCompleteListener(LoginActivity.this, task -> {
-                                    if (task.isSuccessful()) {
-                                        Intent intent  = new Intent(LoginActivity.this, RegisterActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                        intent.putExtra("userId", userId);
-                                        startActivity(intent);
-                                        displayToast("Firebase authentication successful");
-                                    } else {
-                                        displayToast("Authentication Failed: " + Objects.requireNonNull(task.getException()).getMessage());
-                                        System.out.println("Authentication Failed: " +Objects.requireNonNull(task.getException()).getMessage());
-                                    }
-                                });
+                    AsyncTask.execute(() -> {
+                        try {
+                            Connection connection = DatabaseConnection.getConnection();
+
+                            String sql = "SELECT * FROM tbl_users WHERE googleId = ?";
+                            PreparedStatement statement = connection.prepareStatement(sql);
+                            statement.setString(1, userId);
+                            ResultSet resultSet = statement.executeQuery();
+
+                            if (resultSet.next()) {
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                intent.putExtra("userId", userId);
+                                startActivity(intent);
+                                displayToast("Login Berhasil");
                             } else {
                                 Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
                                 registerIntent.putExtra("email", email);
@@ -93,19 +97,19 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(registerIntent);
                                 displayToast("Anda belum terdaftar. Silakan daftar terlebih dahulu.");
                             }
-                        }
 
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-                            // Handle database error
+                            resultSet.close();
+                            statement.close();
+                            connection.close();
+                        } catch (Exception e) {
+                            Log.e("LoginActivity", "Error checking googleId in tbl_users", e);
                         }
                     });
                 }
             }
         }
-
-
     }
+
 
     private void signInWithGoogle() {
         googleSignInClient.signOut().addOnCompleteListener(this, task -> {
@@ -115,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void displayToast(String s) {
-        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+        runOnUiThread(() -> Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show());
     }
 
 }

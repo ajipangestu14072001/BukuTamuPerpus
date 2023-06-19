@@ -46,4 +46,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
     implementation 'com.google.firebase:firebase-database:20.2.2'
     implementation 'com.github.androidmads:QRGenerator:1.0.1'
+    implementation 'mysql:mysql-connector-java:5.1.49'
+
+
+
 }
