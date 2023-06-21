@@ -12,6 +12,9 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.example.bukutamuperpustakaan.databinding.ActivityMainBinding;
+import com.example.bukutamuperpustakaan.view.OnboardActivity;
+import com.example.bukutamuperpustakaan.view.RatingActivity;
+import com.example.bukutamuperpustakaan.view.SplashActivity;
 
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
@@ -29,7 +32,13 @@ public class MainActivity extends AppCompatActivity {
         if (intent != null) {
             userID = intent.getStringExtra("userId");
         }
-        generateCodeQR(binding, "999346");
+        generateCodeQR(binding, userID);
+
+        binding.refresh.setOnClickListener(view1 -> {
+            Intent intent1 = new Intent(MainActivity.this, RatingActivity.class);
+            intent1.putExtra("userId", userID);
+            startActivity(intent1);
+        });
     }
 
     private void generateCodeQR(ActivityMainBinding binding, String value) {
