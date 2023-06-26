@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "943754771571",
+    "firebase_url": "https://perpustakaan-d25d5-default-rtdb.firebaseio.com",
     "project_id": "perpustakaan-d25d5",
     "storage_bucket": "perpustakaan-d25d5.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "943754771571-9su5tiqghjssp1edi525o7k4c20krvcj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bukutamuperpustakaan",
+            "certificate_hash": "08cdcda4317e9fbc065937a19836c6231dee973d"
+          }
+        },
         {
           "client_id": "943754771571-e28urbcenqtd533icov471ctv824a6ha.apps.googleusercontent.com",
           "client_type": 1,
