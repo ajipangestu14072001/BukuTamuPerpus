@@ -1,10 +1,6 @@
 package com.example.bukutamuperpustakaan.view;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -12,26 +8,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
-import com.example.bukutamuperpustakaan.MainActivity;
-import com.example.bukutamuperpustakaan.R;
-import com.example.bukutamuperpustakaan.databinding.ActivityRegisterBinding;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.bukutamuperpustakaan.databinding.ActivityRegisterBinding;
 import com.example.bukutamuperpustakaan.model.Users;
 import com.example.bukutamuperpustakaan.network.DatabaseConnection;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
 import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {

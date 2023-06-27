@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bukutamuperpustakaan.R;
+import com.bukutamuperpustakaan.R;
 import com.example.bukutamuperpustakaan.model.Question;
 
 import java.util.List;

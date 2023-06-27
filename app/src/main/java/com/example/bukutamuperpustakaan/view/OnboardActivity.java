@@ -1,7 +1,5 @@
 package com.example.bukutamuperpustakaan.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -9,17 +7,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.example.bukutamuperpustakaan.MainActivity;
-import com.example.bukutamuperpustakaan.R;
-import com.example.bukutamuperpustakaan.databinding.ActivityOnboardBinding;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.bukutamuperpustakaan.databinding.ActivityOnboardBinding;
 import com.example.bukutamuperpustakaan.network.DatabaseConnection;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 

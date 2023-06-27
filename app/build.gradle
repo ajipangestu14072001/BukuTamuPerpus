@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.bukutamuperpustakaan'
+    namespace 'com.bukutamuperpustakaan'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.bukutamuperpustakaan"
+        applicationId "com.bukutamuperpustakaan"
         minSdk 24
         targetSdk 33
         versionCode 1

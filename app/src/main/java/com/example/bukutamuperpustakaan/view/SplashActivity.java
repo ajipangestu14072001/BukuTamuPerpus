@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.example.bukutamuperpustakaan.R;
-import com.example.bukutamuperpustakaan.databinding.ActivitySplashBinding;
+import com.bukutamuperpustakaan.databinding.ActivitySplashBinding;
+
 
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {

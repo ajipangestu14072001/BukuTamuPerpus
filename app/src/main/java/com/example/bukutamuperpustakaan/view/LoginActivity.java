@@ -10,8 +10,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bukutamuperpustakaan.databinding.ActivityLoginBinding;
 import com.example.bukutamuperpustakaan.MainActivity;
-import com.example.bukutamuperpustakaan.databinding.ActivityLoginBinding;
 import com.example.bukutamuperpustakaan.network.DatabaseConnection;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -19,19 +19,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
     GoogleSignInClient googleSignInClient;
@@ -43,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("943754771571-ggi140p208i43ub660iv8mda9s55vncg.apps.googleusercontent.com")
+                .requestIdToken("96256974448-muqjj48f34cc5a71ehjmmv3nf3irqmf5.apps.googleusercontent.com")
                 .requestEmail()
                 .build();
 

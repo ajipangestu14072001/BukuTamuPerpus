@@ -14,9 +14,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.bukutamuperpustakaan.MainActivity;
+import com.bukutamuperpustakaan.databinding.ActivityRatingBinding;
 import com.example.bukutamuperpustakaan.adapter.QuestionAdapter;
-import com.example.bukutamuperpustakaan.databinding.ActivityRatingBinding;
 import com.example.bukutamuperpustakaan.model.Question;
 import com.example.bukutamuperpustakaan.model.Survey;
 import com.example.bukutamuperpustakaan.network.DatabaseConnection;

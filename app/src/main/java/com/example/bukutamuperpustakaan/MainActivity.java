@@ -1,7 +1,5 @@
 package com.example.bukutamuperpustakaan;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -11,10 +9,10 @@ import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.example.bukutamuperpustakaan.databinding.ActivityMainBinding;
-import com.example.bukutamuperpustakaan.view.OnboardActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.bukutamuperpustakaan.databinding.ActivityMainBinding;
 import com.example.bukutamuperpustakaan.view.RatingActivity;
-import com.example.bukutamuperpustakaan.view.SplashActivity;
 
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;

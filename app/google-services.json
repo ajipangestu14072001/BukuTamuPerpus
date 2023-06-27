@@ -1,34 +1,49 @@
 {
   "project_info": {
-    "project_number": "167338270959",
-    "firebase_url": "https://bukutamuperpus-a2611-default-rtdb.firebaseio.com",
-    "project_id": "bukutamuperpus-a2611",
-    "storage_bucket": "bukutamuperpus-a2611.appspot.com"
+    "project_number": "96256974448",
+    "project_id": "bukutamu-70bd5",
+    "storage_bucket": "bukutamu-70bd5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:167338270959:android:99cfa8451ebb90087e7b1a",
+        "mobilesdk_app_id": "1:96256974448:android:7909c84048313031c9deb5",
         "android_client_info": {
-          "package_name": "com.example.bukutamuperpustakaan"
+          "package_name": "com.bukutamuperpustakaan"
         }
       },
       "oauth_client": [
         {
-          "client_id": "167338270959-0klm9vtm1hfglb1mgo5oo748fm8pshfg.apps.googleusercontent.com",
+          "client_id": "96256974448-mtbie3664hirvkt3svb8g2su1l6qdqvt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bukutamuperpustakaan",
+            "certificate_hash": "6aa31fb1633ccaea979d8599b86794177d0b87f8"
+          }
+        },
+        {
+          "client_id": "96256974448-mvl3stmiojjn803kl1ruh0iqno7mp8rc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bukutamuperpustakaan",
+            "certificate_hash": "08cdcda4317e9fbc065937a19836c6231dee973d"
+          }
+        },
+        {
+          "client_id": "96256974448-sm1vv427he2fshj0tag1abn21u4160il.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCsSVlbfWEt-cxLT6FrWA0kOpN5EE0OXRI"
+          "current_key": "AIzaSyDpIkOWqtafW9Rb9icG7CJSY1LafY8lh9g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "167338270959-0klm9vtm1hfglb1mgo5oo748fm8pshfg.apps.googleusercontent.com",
+              "client_id": "96256974448-muqjj48f34cc5a71ehjmmv3nf3irqmf5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
